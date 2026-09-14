@@ -77,9 +77,9 @@ Please prepare an environment that meets the following requirements **before the
 
 | # | Title | Duration |
 |---|---|---|
-| 1 | [Build Agents with Foundry SDK & Microsoft Agent Framework](labs/lab1-sdk-and-agent-framework/README.md) | ~105 minutes |
-| 2 | [Deploy to Hosted Agents](labs/lab2-hosted-agent-deploy/README.md) | ~45 minutes |
-| 3 | [Evaluate Your Agent](labs/lab3-evaluation/README.md) | ~45 minutes |
+| 1 | [Build Agents with Foundry SDK & Microsoft Agent Framework](labs/lab1-sdk-and-agent-framework/README_EN.md) | ~105 minutes |
+| 2 | [Deploy to Hosted Agents](labs/lab2-hosted-agent-deploy/README_EN.md) | ~45 minutes |
+| 3 | [Evaluate Your Agent](labs/lab3-evaluation/README_EN.md) | ~45 minutes |
 
 See **[labs/README.md](labs/README.md)** for details.
 
