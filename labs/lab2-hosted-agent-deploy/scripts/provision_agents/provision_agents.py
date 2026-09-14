@@ -28,6 +28,39 @@ Microsoft Foundry プロジェクトに作成 (またはバージョン追加) �
   pip install -r requirements.txt
   az login
   python provision_agents.py
+
+English:
+Setup script that creates two Prompt Agents in Foundry.
+
+This script creates (or adds a version to) the following two agents used in
+this workshop in a Microsoft Foundry project:
+
+1. Microsoft technology expert agent (fixed name: ``ms-learn``)
+   - Connects to the Microsoft Learn MCP server
+     (https://learn.microsoft.com/api/mcp) as an ``MCPTool`` and answers
+     questions about Microsoft technology based on Microsoft Learn
+     documentation.
+
+2. Web search agent (fixed name: ``web-search``)
+   - Uses the Foundry Agent Service ``WebSearchTool`` (Bing Search grounding)
+     to answer based on current, general information from the Web.
+
+The agent names are fixed to match the orchestrator
+(``agent-src/orchestrator.py``). Update both locations if you change a name.
+
+This script loads ``.env`` from the repository root and reads only
+``FOUNDRY_PROJECT_ENDPOINT`` and ``AZURE_AI_MODEL_DEPLOYMENT_NAME``.
+
+Usage:
+  cd scripts/provision_agents
+  python -m venv .venv
+  # Windows
+  .\\.venv\\Scripts\\Activate.ps1
+  # Linux / macOS
+  source .venv/bin/activate
+  pip install -r requirements.txt
+  az login
+  python provision_agents.py
 """
 
 from __future__ import annotations

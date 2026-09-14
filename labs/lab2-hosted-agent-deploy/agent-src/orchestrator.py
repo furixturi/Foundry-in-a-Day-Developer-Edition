@@ -10,6 +10,21 @@
   オーケストレータの ``instructions`` には書かない。代わりに
   ``SkillsProvider`` で読み込む ``skills/orchestrator-routing/SKILL.md``
   に記載し、Agent Skills 機能経由で制御する。
+
+English:
+Orchestrator agent factory.
+
+This file builds the orchestration agent used for both local execution and
+Hosted Agent execution.
+
+Design points:
+- Connect to the existing Foundry-registered agents (the Microsoft technology
+  expert and Web search agents) with ``FoundryAgent``, then convert them into
+  tools with ``.as_tool()``.
+- Do not define the routing logic that selects a tool (subagent) in the
+  orchestrator's ``instructions``. Instead, define it in
+  ``skills/orchestrator-routing/SKILL.md``, which ``SkillsProvider`` loads,
+  and control routing through Agent Skills.
 """
 
 from __future__ import annotations

@@ -6,6 +6,16 @@
   python -m venv .venv && .\\.venv\\Scripts\\Activate.ps1  # Windows
   pip install -r requirements.txt
   python local.py
+
+English:
+Local execution entry point.
+
+Usage:
+  az login                       # Sign in with Azure CLI first
+  cd agent-src
+  python -m venv .venv && .\\.venv\\Scripts\\Activate.ps1  # Windows
+  pip install -r requirements.txt
+  python local.py
 """
 
 from __future__ import annotations
