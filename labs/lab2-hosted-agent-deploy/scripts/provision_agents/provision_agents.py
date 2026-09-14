@@ -46,10 +46,12 @@ from azure.identity import DefaultAzureCredential
 from dotenv import find_dotenv, load_dotenv
 
 # サブエージェントの名前 (固定。orchestrator.py の定数と一致させる)
+# Subagent names (fixed; keep them aligned with the constants in orchestrator.py)
 MS_LEARN_AGENT_NAME = "ms-learn"
 WEB_SEARCH_AGENT_NAME = "web-search"
 
 # Microsoft Learn の公開 MCP エンドポイント (認証不要)
+# Public Microsoft Learn MCP endpoint (no authentication required)
 MS_LEARN_MCP_URL = "https://learn.microsoft.com/api/mcp"
 
 MS_LEARN_INSTRUCTIONS = (
@@ -89,6 +91,7 @@ def _create_ms_learn_agent(project: AIProjectClient, *, model: str) -> None:
         server_label="microsoft-learn",
         server_url=MS_LEARN_MCP_URL,
         # オーケストレータから自動で呼び出すため承認は不要
+        # Approval is unnecessary because the orchestrator invokes this automatically.
         require_approval="never",
     )
     agent = project.agents.create_version(
@@ -124,6 +127,7 @@ def _create_web_search_agent(project: AIProjectClient, *, model: str) -> None:
 
 def main() -> None:
     # リポジトリルート (scripts/provision_agents の 2 階層上) の .env を探して読み込む
+    # Find and load .env from the repository root (two levels above scripts/provision_agents).
     load_dotenv(find_dotenv(usecwd=True))
     _require_env()
 

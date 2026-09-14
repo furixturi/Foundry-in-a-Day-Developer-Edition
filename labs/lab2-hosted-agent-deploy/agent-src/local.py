@@ -17,6 +17,7 @@ from dotenv import find_dotenv, load_dotenv
 from orchestrator import build_orchestrator
 
 # 標準出力に「呼び出されたサブエージェント」を表示するためのツール名集合
+# Tool names used to show the invoked subagents in standard output
 SUB_AGENT_TOOL_NAMES = {"ms_learn_agent", "web_search_agent"}
 
 
@@ -34,6 +35,7 @@ def _called_sub_agents(result) -> list[str]:
 
 async def main() -> None:
     # find_dotenv() は呼び出し元から親ディレクトリへ探索する。
+    # find_dotenv() searches parent directories from the caller.
     load_dotenv(find_dotenv(usecwd=True))
     agent = build_orchestrator()
 

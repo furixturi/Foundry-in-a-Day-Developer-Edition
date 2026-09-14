@@ -15,7 +15,9 @@ from orchestrator import build_orchestrator
 
 
 def main() -> None:
-    load_dotenv()  # ローカル動作確認用。Hosted では実質 no-op。
+    # ローカル動作確認用。Hosted では実質 no-op。
+    # Used for local testing; effectively a no-op when hosted.
+    load_dotenv()
     agent = build_orchestrator()
     server = ResponsesHostServer(agent)
     server.run()
